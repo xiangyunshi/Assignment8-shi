@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Assignment6_Peary</title>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<script>
+		$(document).ready(function(){
+		   $("#width").html($(window).innerWidth() + 'px');
+		   $("#height").html( $(window).innerHeight() + 'px');
+		   $(window).resize(function(){
+		   		$("#width").html($(window).innerWidth());
+		   		$("#height").html($(window).innerHeight());
+	       });
+		  // $(location).attr('href');
+		  $("#location").html( $(location).attr('href'));
+		  $("#button-reload").click(function(){
+        	location.reload();
+       	  });
+        });
+	
+	</script>
+	<script>
+		$(document).ready(function(){
+		 // $("#button-reload").click(function(){
+   //      	location.reload();
+    				 
+		 $("#button-change").click(function(){
+   		 $("#p3").addClass("yellow");
+   		 });
+   		 $("#button-hello").click(function(){
+   		 	// html 1 time  append <p>text</p> many time
+   		 $("#hello").html("Hello World"); 
+   		}); 
+   		 $("#button-show").click(function(){
+       	 $("#p2").toggle();
+   		});
+   		 
+   		 });
+   		    		     
+        </script>
+		<style>
+		.yellow {
+   			 color: yellow;
+		}
+		</style>
+
+</head>
+<body>
+	<h1 id="Task">Task#1: Show width and height;current location,and a reload button</h1>
+
+	<p>The width and height should dynamiclly changed when you resize the window</p>
+	<p>Width: <span id="width"></span> </p>
+	<p>Height: <span id="height"></span></p>
+	<p>Current location: <span id="location"></span></p>
+
+	<button id="button-reload">Reload Page</button>
+	
+	
+	<hr>
+
+	<h1 id="Task">Task#2: Manipulating DOM</h1>
+	<p>Instruction as described on the buttons</p>
+	<p id="p1">P1 with an id</p>
+	<p id="p2">P2 with an id</p>
+	<p id="p3">P3 with an id</p>
+	<p id="hello"></p>
+
+	<button id="button-change">Change to yellow color of the third P Tag</button>
+
+	<button id="button-hello">Append Hello World Under P3</button> <br/>
+
+	<button id="button-show">Show/Hide P2 (Hint; Use if(e.stlye.display == null || e.style.display == "none")</button> <br/>
+
+	<hr>
+	<h1 id="Task">Task#3: Mouse and Click Event</h1>
+	<p>Show "On Mouse Over" when I mouse over the link; Show "On Mouse Out" when I mouse out the link;(do the same for Mouse Down, and Mouse Up) when Double Click,Show "On Double Click"</p>
+	<a href="#" id="showMouse">Show Event Here</a>
+
+	<!-- <a href="JavaScript:void(0)" id="makemealien" 
+	  onmouseover="this.text='On Mouse Over'"
+	  onmouseout="this.text='On Mouse Out'"
+	  ondblclick="this.text='On Double Click'"
+	  onmouseup="this.text='On Mouse Up'" 
+	  onmousedown="this.text='On Mouse Down'"
+	  onclick="this.text='On Click'">Show Event Here</a><br />
+ -->
+ <script>
+ 	$(document).ready(function(){
+$("#showMouse").mouseover(function(){
+$("a").html("Mouse over");
+});
+$("#showMouse").mouseout(function(){
+$("a").html("Mouse out");
+});
+$("#showMouse").mouseup(function(){
+$("a").html("Mouse up");
+});
+$("#showMouse").mousedown(function(){
+$("a").html("Mouseo down");
+});
+$("#showMouse").dblclick(function(){
+$("a").html("Double Click");
+});
+});
+</script>
+
+
+</body>
+</html>
